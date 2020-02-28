@@ -14,14 +14,14 @@ app.use(express.json());
 app.get('/',function(req,res){
     res.sendFile(__dirname+"/"+"home.html")
 });
-app.get('/register',function(req,res){
-    console.log("register page");
+app.get('/createacc',function(req,res){
+    console.log("createacc page");
     res.sendFile(__dirname+"/"+"reg.html");
     
 });
 
-app.get('/post_register',function(req,res){
-    console.log("post register function");
+app.get('/post_createacc',function(req,res){
+    console.log("post createacc function");
      let sql = `insert into student values("${req.query.name}","${req.query.usn}","${req.query.gender}","${req.query.email}","${req.query.dept}",${req.query.sem})`;
  
 	db.all(sql, [], (err, rows) => {
@@ -46,8 +46,8 @@ app.get('/post_register',function(req,res){
 	var mailOptions = {
 	  from: 'email@yahoo.com',
 	  to: req.query.email,
-	  subject: 'Registration',
-	  text: 'you have successfullly registered\nstay tuned for updates'
+	  subject: 'CreateAccount',
+	  text: 'you have successfullly createdacc\nstay tuned for updates'
 	};
 
 	transporter.sendMail(mailOptions, function(error, info){
@@ -57,7 +57,7 @@ app.get('/post_register',function(req,res){
 		console.log('Email sent: ' + info.response);
 	  }
 	});
-	res.status(200).send("Registration Successful");
+	res.status(200).send("CreateAccount Successful");
 	
      //console.log(response);
 });
