@@ -57,7 +57,7 @@ app.get('/post_createacc',function(req,res){
 		console.log('Email sent: ' + info.response);
 	  }
 	});
-	res.status(200).send("CreateAccount Successful");
+	res.status(200).send("Account Created Successfully");
 	
      //console.log(response);
 });
