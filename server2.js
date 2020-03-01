@@ -22,7 +22,7 @@ app.get('/createacc',function(req,res){
 
 app.get('/post_createacc',function(req,res){
     console.log("post createacc function");
-     let sql = `insert into student values("${req.query.name}","${req.query.usn}","${req.query.gender}","${req.query.email}","${req.query.dept}",${req.query.sem})`;
+     let sql = `insert into student values("${req.query.name}","${req.query.an}","${req.query.gender}","${req.query.email}","${req.query.dept}",${req.query.age})`;
  
 	db.all(sql, [], (err, rows) => {
 	  if (err) {
